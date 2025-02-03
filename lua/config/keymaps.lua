@@ -1,0 +1,37 @@
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
+vim.g.mapleader = " "
+
+-- :W == :w
+vim.api.nvim_create_user_command("W", "write", {})
+vim.api.nvim_create_user_command("Q", "quit", {})
+
+-- go to vim file explorer
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- clear highlighting
+vim.keymap.set({ "n" }, "<C-l>", "<cmd>noh<CR>")
+
+-- move highlighted text up and down with autoindenting
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- append next line without moving the cursor
+vim.keymap.set("n", "J", "mzJ`z")
+
+-- paste over highligh without loosing the text in buffer
+vim.keymap.set("x", "<leader>p", '"_dP')
+
+-- start replacing the word you are on in the whole file
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- make the file executable
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- yeah I don't really need incrementing numbers by 1
+vim.keymap.set("n", "<C-x>", "ge")
+
+-- jumping half page keeps the cursor at the middle
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
