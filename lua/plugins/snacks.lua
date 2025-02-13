@@ -4,8 +4,6 @@ return {
     dim = {
       vim.keymap.set("n", "<leader>dim", "<cmd>lua Snacks.dim()<cr>"),
       vim.keymap.set("n", "<leader>udim", "<cmd>lua Snacks.dim.disable()<cr>"),
-    },
-    lazygit = {},
     dashboard = {
       preset = {
         header = [[
@@ -24,13 +22,12 @@ return {
           pane = 2,
           -- gap = 4,
           section = "terminal",
+          cmd = (vim.loop.os_uname().sysname == "Windows_NT")
+            and 'chafa "C:\\Users\\Ivan\\Desktop\\PAPKA\\8bitpixelartvista.jpg" --format symbols --symbols vhalf --size 55x10 --stretch'  -- Windows command
+            or 'chafa "/home/zovutvanya/8bitpixelartvista.jpg" --format symbols --symbols vhalf --size 55x10 --stretch',              -- Linux/Unix command
+
           -- cmd = 'pat "C:\\Users\\Ivan\\Desktop\\PAPKA\\8bitpixelartvista55x15.jpg"',
-          cmd = 'chafa "C:\\Users\\Ivan\\Desktop\\PAPKA\\8bitpixelartvista.jpg" --format symbols --symbols vhalf --size 55x10 --stretch',
           -- cmd = "ascii-image-converter 'C:\\Users\\Ivan\\Desktop\\PAPKA\\8bitpixelartvista.jpg' -C -c -d 55,15",
-          -- cmd = 'chafa "C:\\Users\\Ivan\\Pictures\\Saved Pictures\\Wallpapers\\39750196589805232 (2).jpg" --size 55x10 --stretch',
-          -- cmd = (vim.loop.os_uname().sysname == "Windows_NT")
-          --   and 'Show-ColorScript -Name "elfman"'  -- Windows command
-          --   or 'colorscript -e elfman',              -- Linux/Unix command
           height = 10,
           padding = 1,
         },
