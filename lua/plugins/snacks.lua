@@ -1,6 +1,11 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    dim = {
+      vim.keymap.set("n", "<leader>dim", "<cmd>lua Snacks.dim()<cr>"),
+      vim.keymap.set("n", "<leader>udim", "<cmd>lua Snacks.dim.disable()<cr>"),
+    },
+    lazygit = {},
     dashboard = {
       preset = {
         header = [[
@@ -21,6 +26,7 @@ return {
           section = "terminal",
           -- cmd = 'pat "C:\\Users\\Ivan\\Desktop\\PAPKA\\8bitpixelartvista55x15.jpg"',
           cmd = 'chafa "C:\\Users\\Ivan\\Desktop\\PAPKA\\8bitpixelartvista.jpg" --format symbols --symbols vhalf --size 55x10 --stretch',
+          -- cmd = "ascii-image-converter 'C:\\Users\\Ivan\\Desktop\\PAPKA\\8bitpixelartvista.jpg' -C -c -d 55,15",
           -- cmd = 'chafa "C:\\Users\\Ivan\\Pictures\\Saved Pictures\\Wallpapers\\39750196589805232 (2).jpg" --size 55x10 --stretch',
           -- cmd = (vim.loop.os_uname().sysname == "Windows_NT")
           --   and 'Show-ColorScript -Name "elfman"'  -- Windows command
@@ -29,8 +35,24 @@ return {
           padding = 1,
         },
         { section = "keys", gap = 1, padding = 0 },
-        { pane = 2, icon = "     ", title = "Recent Files", section = "recent_files", indent = 7, padding = 1 },
-        { pane = 2, icon = "     ", title = "Projects", section = "projects", indent = 7, padding = 1 },
+        {
+          pane = 2,
+          icon = "     ",
+          title = "Recent Files",
+          section = "recent_files",
+          indent = 7,
+          padding = 1,
+          gap = 0,
+        },
+        {
+          pane = 2,
+          icon = "     ",
+          title = "Projects",
+          section = "projects",
+          indent = 7,
+          padding = 1,
+          gap = 0,
+        },
         -- {
         --   pane = 2,
         --   icon = " ",

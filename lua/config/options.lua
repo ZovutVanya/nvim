@@ -3,6 +3,8 @@
 -- Add any additional options here
 -- colorscheme and transparency
 
+vim = vim
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
