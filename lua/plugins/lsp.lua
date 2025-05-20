@@ -32,6 +32,9 @@ return {
         basedpyright = {},
         -- pylsp = {},
         clangd = {},
+        powershell_es = {},
+        bashls = {},
+        sqls = {},
       },
     },
     config = function(_, opts)
