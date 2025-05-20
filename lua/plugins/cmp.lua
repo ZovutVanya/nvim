@@ -1,10 +1,21 @@
 return {
   "saghen/blink.cmp",
   opts = {
-    sources = {
-      compat = {},
-      default = { "lsp", "path", "snippets", "buffer" },
-      cmdline = {},
+    completion = {
+      accept = {
+        auto_brackets = {
+          enabled = true,
+          -- Disable auto-brackets for Racket and Scheme filetypes
+          kind_resolution = {
+            enabled = true,
+            blocked_filetypes = { "racket", "scheme" },
+          },
+          semantic_token_resolution = {
+            enabled = true,
+            blocked_filetypes = { "racket", "scheme" },
+          },
+        },
+      },
     },
   },
 }

@@ -1,10 +1,10 @@
 return {
   "folke/snacks.nvim",
   opts = {
-    dim = {
-      vim.keymap.set("n", "<leader>dim", "<cmd>lua Snacks.dim()<cr>"),
-      vim.keymap.set("n", "<leader>udim", "<cmd>lua Snacks.dim.disable()<cr>"),
-    },
+    -- dim = {
+    --   vim.keymap.set("n", "<leader>dim", "<cmd>lua Snacks.dim()<cr>"),
+    --   vim.keymap.set("n", "<leader>dimd", "<cmd>lua Snacks.dim.disable()<cr>"),
+    -- },
     dashboard = {
       preset = {
         header = [[

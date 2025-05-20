@@ -4,7 +4,8 @@ return {
   opts = {
     events = { "BufWritePost", "BufReadPost", "InsertLeave" },
     linters_by_ft = {
-      python = { "ruff" },
+      -- python = { "ruff" },
+      python = { "mypy" },
       c = { "cpplint" },
       cpp = { "cpplint" },
       lua = { "selene" },

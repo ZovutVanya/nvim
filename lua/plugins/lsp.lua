@@ -12,6 +12,7 @@ return {
         ensure_installed = {
           "lua_ls",
           "basedpyright",
+          -- "pylsp",
           "clangd",
           "powershell_es",
           "bashls",
@@ -29,6 +30,7 @@ return {
         lua_ls = {},
         racket_langserver = { filetypes = { "racket" } },
         basedpyright = {},
+        -- pylsp = {},
         clangd = {},
       },
     },

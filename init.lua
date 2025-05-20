@@ -9,3 +9,10 @@ vim.cmd("highlight NeoTreeNormal guibg=NONE")
 vim.cmd("highlight NeoTreeNormalNC guibg=NONE")
 vim.cmd("highlight SignColumn guibg=NONE")
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "racket",
+  callback = function()
+    vim.cmd("iabbrev <buffer> lambda λ")
+  end,
+})

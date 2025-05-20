@@ -7,10 +7,8 @@ vim.g.mapleader = " "
 vim.api.nvim_create_user_command("W", "write", {})
 vim.api.nvim_create_user_command("Q", "quit", {})
 
--- go to vim file explorer
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 -- clear highlighting
+
 vim.keymap.set({ "n" }, "<C-l>", "<cmd>noh<CR>")
 
 -- move highlighted text up and down with autoindenting
@@ -29,8 +27,8 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- make the file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- yeah I don't really need incrementing numbers by 1
-vim.keymap.set("n", "<C-x>", "ge")
+-- jumping to the end backwards
+vim.keymap.set("n", "<C-e>", "ge")
 
 -- jumping half page keeps the cursor at the middle
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
