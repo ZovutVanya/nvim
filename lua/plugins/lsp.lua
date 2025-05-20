@@ -16,7 +16,7 @@ return {
           "clangd",
           "powershell_es",
           "bashls",
-          "sqlls",
+          "sqls",
         },
       })
     end,
