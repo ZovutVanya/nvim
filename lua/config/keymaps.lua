@@ -33,3 +33,6 @@ vim.keymap.set("n", "<C-e>", "ge")
 -- jumping half page keeps the cursor at the middle
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- open dashboard
+vim.keymap.set("n", "<leader>ds", ":lua Snacks.dashboard()<CR>")

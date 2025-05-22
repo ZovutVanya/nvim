@@ -24,7 +24,6 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },
-
     opts = {
       servers = {
         lua_ls = {},
@@ -45,15 +44,4 @@ return {
       end
     end,
   },
-  -- {
-  --   "amrbashir/nvim-docs-view",
-  --   event = { "BufReadPre", "BufNewFile" },
-  --   -- lazy = true,
-  --   cmd = "DocsViewToggle",
-  --   opts = {
-  --     position = "right",
-  --     width = 60,
-  --   },
-  --   vim.keymap.set("n", "<leader>cd", ":DocsViewToggle<CR>", {}),
-  -- },
 }
