@@ -5,7 +5,8 @@ return {
     events = { "BufWritePost", "BufReadPost", "InsertLeave" },
     linters_by_ft = {
       sh = { "shellcheck" },
-      python = { "mypy" },
+      python = { "ruff" },
+      -- python = { "mypy" },
       c = { "cpplint" },
       cpp = { "cpplint" },
       lua = { "selene" },
