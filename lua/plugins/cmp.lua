@@ -8,11 +8,11 @@ return {
           -- Disable auto-brackets for Racket and Scheme filetypes
           kind_resolution = {
             enabled = true,
-            blocked_filetypes = { "racket", "scheme" },
+            blocked_filetypes = { "racket", "scheme", "powershell" },
           },
           semantic_token_resolution = {
             enabled = true,
-            blocked_filetypes = { "racket", "scheme" },
+            blocked_filetypes = { "racket", "scheme", "powershell" },
           },
         },
       },

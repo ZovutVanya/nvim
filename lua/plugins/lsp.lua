@@ -35,7 +35,12 @@ return {
         basedpyright = {},
         -- pylsp = {},
         clangd = {},
-        powershell_es = {},
+        powershell_es = {
+          bundle_path = "C:\\Users\\Ivan\\AppData\\Local\\nvim-data\\mason\\packages\\powershell-editor-services",
+          init_options = {
+            enableProfileLoading = false,
+          },
+        },
         bashls = {},
         sqls = {},
       },
