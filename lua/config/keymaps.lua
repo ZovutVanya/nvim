@@ -8,7 +8,6 @@ vim.api.nvim_create_user_command("W", "write", {})
 vim.api.nvim_create_user_command("Q", "quit", {})
 
 -- clear highlighting
-
 vim.keymap.set({ "n" }, "<C-l>", "<cmd>noh<CR>")
 
 -- move highlighted text up and down with autoindenting
@@ -36,3 +35,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- open dashboard
 vim.keymap.set("n", "<leader>ds", ":lua Snacks.dashboard()<CR>")
+
+-- LSP renaming
+vim.keymap.set("n", "<leader>rn", ":IncRename ")

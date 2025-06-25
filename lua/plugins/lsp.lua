@@ -16,7 +16,7 @@ return {
           "clangd",
           "powershell_es",
           "bashls",
-          "sqls",
+          -- "sqls",
         },
         automatic_installation = true,
         handlers = {
@@ -30,7 +30,7 @@ return {
     dependencies = { "saghen/blink.cmp" },
     opts = {
       servers = {
-        lua_ls = {},
+        lua_ls = { settings = { diagnostics = { globals = { "vim" } } } },
         racket_langserver = { filetypes = { "racket" } },
         basedpyright = {},
         -- pylsp = {},
