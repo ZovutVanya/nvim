@@ -32,7 +32,26 @@ return {
       servers = {
         lua_ls = { settings = { diagnostics = { globals = { "vim" } } } },
         racket_langserver = { filetypes = { "racket" } },
-        basedpyright = {},
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                typeCheckingMode = "recommended",
+                inlayHints = {
+                  callArgumentNames = true,
+                  variableTypes = true,
+                  functionReturnTypes = true,
+                },
+                useLibraryCodeForTypes = false,
+                diagnosticSeverityOverrides = {
+                  reportUnusedCallResult = "none",
+                  -- reportUnknownMemberType = "none",
+                  -- reportUnknownVariableType = "none",
+                },
+              },
+            },
+          },
+        },
         -- pylsp = {},
         clangd = {},
         powershell_es = {
