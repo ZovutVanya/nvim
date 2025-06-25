@@ -61,7 +61,7 @@ return {
           },
         },
         bashls = {},
-        sqls = {},
+        -- sqls = {},
       },
     },
     config = function(_, opts)
