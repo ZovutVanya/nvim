@@ -16,7 +16,7 @@ return {
           "clangd",
           "powershell_es",
           "bashls",
-          -- "sqls",
+          "sqls",
         },
         automatic_installation = true,
         handlers = {
@@ -36,18 +36,18 @@ return {
           settings = {
             basedpyright = {
               analysis = {
-                typeCheckingMode = "recommended",
+                typeCheckingMode = "standard",
                 inlayHints = {
                   callArgumentNames = true,
                   variableTypes = true,
                   functionReturnTypes = true,
                 },
-                useLibraryCodeForTypes = false,
-                diagnosticSeverityOverrides = {
-                  reportUnusedCallResult = "none",
-                  -- reportUnknownMemberType = "none",
-                  -- reportUnknownVariableType = "none",
-                },
+                -- useLibraryCodeForTypes = false,
+                -- diagnosticSeverityOverrides = {
+                --   reportUnusedCallResult = "none",
+                -- reportUnknownMemberType = "none",
+                -- reportUnknownVariableType = "none",
+                -- },
               },
             },
           },
@@ -61,7 +61,7 @@ return {
           },
         },
         bashls = {},
-        -- sqls = {},
+        sqls = {},
       },
     },
     config = function(_, opts)
