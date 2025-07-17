@@ -1,3 +1,4 @@
+local postgres_lsp = require("lspconfig.configs.postgres_lsp")
 return {
   {
     "williamboman/mason.nvim",
@@ -17,7 +18,6 @@ return {
           "powershell_es",
           "bashls",
           "tinymist",
-          -- "sqls",
           "sqls",
         },
         automatic_installation = true,
@@ -69,7 +69,7 @@ return {
           semanticTokens = "disable",
         },
         -- sqls = {},
-        sqls = {},
+        postgres_lsp = {},
       },
     },
     config = function(_, opts)

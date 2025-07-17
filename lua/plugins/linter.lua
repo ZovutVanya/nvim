@@ -10,6 +10,7 @@ return {
       c = { "cpplint" },
       cpp = { "cpplint" },
       lua = { "selene" },
+      sql = { "postgrestools" },
       -- sql = { "sqlfluff" },
       --
       -- Use the "*" filetype to run linters on all filetypes.

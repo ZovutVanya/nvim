@@ -23,12 +23,7 @@ return {
           pane = 2,
           -- gap = 4,
           section = "terminal",
-          cmd = (vim.loop.os_uname().sysname == "Windows_NT")
-              and 'chafa "C:\\Users\\Ivan\\Desktop\\PAPKA\\8bitpixelartvista.jpg" --format symbols --symbols vhalf --size 55x10 --stretch' -- Windows command
-            or "colorscript -e elfman",
-          -- or 'chafa "/home/penpen/8bitpixelartvista.jpg" --format symbols --symbols vhalf --size 55x10 --stretch', -- Linux/Unix command
-          -- cmd = 'pat "C:\\Users\\Ivan\\Desktop\\PAPKA\\8bitpixelartvista55x15.jpg"',
-          -- cmd = "ascii-image-converter 'C:\\Users\\Ivan\\Desktop\\PAPKA\\8bitpixelartvista.jpg' -C -c -d 55,15",
+          cmd = 'chafa "/Users/gurkoff/8bitpixelartvista.jpg" --format symbols --symbols vhalf --size 55x10 --stretch',
           height = 10,
           padding = 1,
         },
