@@ -11,7 +11,10 @@ vim.opt.relativenumber = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
+
+-- allows the block cursor to be placed one character after line's end
+vim.opt.virtualedit:append({ "onemore" })
 
 vim.opt.scrolloff = 8
 
