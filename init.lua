@@ -9,6 +9,7 @@ vim.cmd("highlight NeoTreeNormal guibg=NONE")
 vim.cmd("highlight NeoTreeNormalNC guibg=NONE")
 vim.cmd("highlight SignColumn guibg=NONE")
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
 
 -- replace "lambda" with "λ" in racket files
 vim.api.nvim_create_autocmd("FileType", {

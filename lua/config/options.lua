@@ -3,14 +3,13 @@
 -- Add any additional options here
 -- colorscheme and transparency
 
-vim = vim
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
+vim.opt.winborder = "rounded"
 -- vim.opt.colorcolumn = "80"
 
 -- allows the block cursor to be placed one character after line's end
