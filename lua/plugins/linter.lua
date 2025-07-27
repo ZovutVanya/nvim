@@ -9,7 +9,7 @@ return {
       -- python = { "mypy" },
       c = { "cpplint" },
       cpp = { "cpplint" },
-      lua = { "selene" },
+      -- lua = { "selene" },
       sql = { "postgrestools" },
       -- sql = { "sqlfluff" },
       --

@@ -32,7 +32,17 @@ return {
     dependencies = { "saghen/blink.cmp" },
     opts = {
       servers = {
-        lua_ls = { settings = { diagnostics = { globals = { "vim" } } } },
+        lua_ls = {
+          settings = {
+            Lua = {
+              workspace = { checkThirdParty = false, library = vim.api.nvim_get_runtime_file("", true) },
+              telemetry = { enable = false },
+              diagnostics = {
+                globals = { "vim" },
+              },
+            },
+          },
+        },
         racket_langserver = { filetypes = { "racket" } },
         basedpyright = {
           settings = {
