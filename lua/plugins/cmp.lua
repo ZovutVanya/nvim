@@ -16,6 +16,16 @@ return {
           },
         },
       },
+      menu = {
+        winblend = 0,
+        winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,EndOfBuffer:BlinkCmpDoc",
+      },
     },
+    -- signature = {
+    --   enabled = true,
+    --   window = {
+    --     winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,EndOfBuffer:BlinkCmpDoc",
+    --   },
+    -- },
   },
 }

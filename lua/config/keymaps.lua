@@ -24,7 +24,7 @@ vim.keymap.set("x", "<leader>p", '"_dP')
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- make the file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- jumping to the end backwards
 vim.keymap.set("n", "<C-e>", "ge")
@@ -33,8 +33,19 @@ vim.keymap.set("n", "<C-e>", "ge")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- open dashboard
-vim.keymap.set("n", "<leader>ds", ":lua Snacks.dashboard()<CR>")
+-- open Snacks' Dashboard
+vim.keymap.set("n", "<leader>i", ":lua Snacks.dashboard()<CR>")
+
+-- oil.nvim
+vim.keymap.set("n", "<leader>fo", ":Oil<CR>")
 
 -- LSP renaming
 vim.keymap.set("n", "<leader>rn", ":IncRename ")
+
+-- copy line diagnostics
+vim.keymap.set(
+  "n",
+  "<leader>cy",
+  ":lua vim.diagnostic.open_float()<CR>:lua vim.diagnostic.open_float()<CR>:%y<CR>:q<CR>",
+  { desc = "Copy the Line Diagnostics" }
+)

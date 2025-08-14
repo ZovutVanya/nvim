@@ -1,37 +1,48 @@
-local postgres_lsp = require("lspconfig.configs.postgres_lsp")
 return {
   {
-    "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
+    "mason-org/mason.nvim",
+    opts = {
+      ui = {
+        border = "rounded",
+        icons = {
+          package_installed = "Ѵ",
+          package_pending = "Ѱ",
+          package_uninstalled = "Ѫ",
+        },
+      },
+    },
   },
+
   {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "lua_ls",
-          "basedpyright",
-          -- "pylsp",
-          "clangd",
-          "powershell_es",
-          "bashls",
-          "tinymist",
-          "sqls",
-        },
-        automatic_installation = true,
-        handlers = {
-          rust_analyzer = function() end,
-        },
-      })
-    end,
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = {
+        "lua_ls",
+        "basedpyright",
+        -- "pylsp",
+        "clangd",
+        "powershell_es",
+        "bashls",
+        "tinymist",
+        "sqls",
+      },
+      automatic_installation = true,
+      handlers = {
+        rust_analyzer = function() end,
+      },
+    },
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
   },
+
   {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },
     opts = {
       servers = {
+
         lua_ls = {
           settings = {
             Lua = {
@@ -43,7 +54,9 @@ return {
             },
           },
         },
+
         racket_langserver = { filetypes = { "racket" } },
+
         basedpyright = {
           settings = {
             basedpyright = {
@@ -54,30 +67,28 @@ return {
                   variableTypes = true,
                   functionReturnTypes = true,
                 },
-                -- useLibraryCodeForTypes = false,
-                -- diagnosticSeverityOverrides = {
-                --   reportUnusedCallResult = "none",
-                -- reportUnknownMemberType = "none",
-                -- reportUnknownVariableType = "none",
-                -- },
               },
             },
           },
         },
-        -- pylsp = {},
+
         clangd = {},
+
         powershell_es = {
           bundle_path = "C:\\Users\\Ivan\\AppData\\Local\\nvim-data\\mason\\packages\\powershell-editor-services",
           init_options = {
             enableProfileLoading = false,
           },
         },
+
         bashls = {},
+
         tinymist = {
           formatterMode = "typstyle",
           exportPdf = "onType",
           semanticTokens = "disable",
         },
+
         -- sqls = {},
         postgres_lsp = {},
       },

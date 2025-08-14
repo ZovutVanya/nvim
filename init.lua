@@ -8,8 +8,12 @@ vim.cmd("highlight NonText guibg=NONE")
 vim.cmd("highlight NeoTreeNormal guibg=NONE")
 vim.cmd("highlight NeoTreeNormalNC guibg=NONE")
 vim.cmd("highlight SignColumn guibg=NONE")
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", blend = 30 })
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+vim.api.nvim_set_hl(0, "Pmenu", { bg = "none", blend = 20 })
+vim.api.nvim_set_hl(0, "FloatTitle", { bg = "none", blend = 30 })
+vim.api.nvim_set_hl(0, "NoiceScrollbar", { bg = "none", fg = "#999999", blend = 0 })
+vim.api.nvim_set_hl(0, "NoiceScrollbarThumb", { bg = "none", fg = "#999999", blend = 0 })
 
 -- replace "lambda" with "λ" in racket files
 vim.api.nvim_create_autocmd("FileType", {
