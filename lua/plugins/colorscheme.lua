@@ -11,7 +11,4 @@ return {
       neotree = true,
     },
   },
-  config = function()
-    vim.cmd.colorscheme("catppuccin")
-  end,
 }

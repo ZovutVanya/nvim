@@ -20,4 +20,24 @@ return {
       -- ["*"] = { "typos" },
     },
   },
+  config = function(_, opts)
+    local lint = require("lint")
+
+    -- apply linters_by_ft config
+    lint.linters_by_ft = opts.linters_by_ft
+
+    -- prevent shellcheck from running on .env files
+    lint.linters.shellcheck = vim.tbl_extend("force", lint.linters.shellcheck, {
+      condition = function(ctx)
+        return not ctx.filename:match("%.env")
+      end,
+    })
+
+    -- set up autocommands for lint events
+    -- vim.api.nvim_create_autocmd(opts.events, {
+    --   callback = function()
+    --     require("lint").try_lint()
+    --   end,
+    -- })
+  end,
 }

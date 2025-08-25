@@ -7,10 +7,14 @@ return {
     },
     sections = {
       lualine_a = { { "mode", separator = { left = "" }, right_padding = 0 } },
-      lualine_y = { { "fileformat", symbols = { unix = "" } }, "encoding" },
+      lualine_y = { "lsp_status" },
       lualine_z = {
         {
-          "lsp_status",
+          "encoding",
+        },
+        {
+          "fileformat",
+          symbols = { unix = " | ", dos = "󰨡" },
           separator = { right = "" },
           left_padding = 0,
         },

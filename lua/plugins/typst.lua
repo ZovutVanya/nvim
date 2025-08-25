@@ -3,8 +3,18 @@ return {
     "chomosuke/typst-preview.nvim",
     lazy = false, -- or ft = 'typst'
     version = "1.*",
-    opts = {}, -- lazy.nvim will implicitly calls `setup {}`
+    opts = {
+      open_cmd = nil,
+    },
   },
+  -- {
+  --   "al-kot/typst-preview.nvim",
+  --   opts = {
+  --     preview = {
+  --       position = "left",
+  --     },
+  --   },
+  -- },
   {
     "kaarmu/typst.vim",
     ft = "typst",

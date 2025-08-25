@@ -29,6 +29,9 @@ vim.keymap.set("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true })
 -- jumping to the end backwards
 vim.keymap.set("n", "<C-e>", "ge")
 
+-- scrolling down without moving the cursor
+vim.keymap.set("n", "<C-h>", "<C-e>")
+
 -- jumping half page keeps the cursor at the middle
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")

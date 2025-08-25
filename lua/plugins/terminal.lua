@@ -7,7 +7,7 @@ return {
     local mappings = {
       {
         toggle_modes,
-        "<A-h>",
+        "<A-.>",
         function()
           terminal.toggle("horizontal")
         end,

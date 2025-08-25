@@ -10,6 +10,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.winborder = "rounded"
+vim.opt.cmdheight = 1
 
 vim.diagnostic.config({
   virtual_lines = {

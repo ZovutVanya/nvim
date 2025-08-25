@@ -81,7 +81,16 @@ return {
           },
         },
 
-        bashls = {},
+        bashls = {
+          on_attach = function(client, bufnr)
+            local fname = vim.api.nvim_buf_get_name(bufnr)
+            if fname:match("/%.env") or fname:match("%.env$") then
+              vim.schedule(function()
+                vim.lsp.stop_client(client.id)
+              end)
+            end
+          end,
+        },
 
         tinymist = {
           formatterMode = "typstyle",
