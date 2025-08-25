@@ -37,7 +37,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- open Snacks' Dashboard
-vim.keymap.set("n", "<leader>i", ":lua Snacks.dashboard()<CR>")
+vim.keymap.set("n", "<leader>\\", ":lua Snacks.dashboard()<CR>")
 
 -- oil.nvim
 vim.keymap.set("n", "<leader>fo", ":Oil<CR>")
