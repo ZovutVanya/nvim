@@ -82,6 +82,14 @@ return {
         },
 
         bashls = {
+          filetypes = { "sh", "zsh", "bash" },
+          settings = {
+            {
+              bashIde = {
+                globPattern = "*@(.sh|.inc|.bash|.command|.zsh)",
+              },
+            },
+          },
           on_attach = function(client, bufnr)
             local fname = vim.api.nvim_buf_get_name(bufnr)
             if fname:match("/%.env") or fname:match("%.env$") then

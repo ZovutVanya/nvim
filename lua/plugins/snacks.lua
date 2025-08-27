@@ -1,5 +1,8 @@
 return {
   "folke/snacks.nvim",
+  keys = {
+    { "<leader>\\", ":lua Snacks.dashboard()<CR>" },
+  },
   opts = {
     dashboard = {
       preset = {

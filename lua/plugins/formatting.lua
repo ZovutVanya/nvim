@@ -4,6 +4,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       sh = { "shfmt" },
+      zsh = { "shfmt" },
       python = { "usort", "ruff" },
       sql = { "sqlfmt" },
       c = { "clang-format" },
