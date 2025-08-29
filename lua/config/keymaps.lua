@@ -43,6 +43,6 @@ vim.keymap.set("n", "<leader>rn", ":IncRename ")
 vim.keymap.set(
   "n",
   "<leader>cy",
-  ":lua vim.diagnostic.open_float()<CR>:lua vim.diagnostic.open_float()<CR>:%y<CR>:q<CR>",
-  { desc = "Copy the Line Diagnostics" }
+  ':lua vim.diagnostic.open_float()<CR>:lua vim.diagnostic.open_float()<CR>ggVG"+y<CR>:q<CR>',
+  { desc = 'Copy Line Diagnostics to "+' }
 )

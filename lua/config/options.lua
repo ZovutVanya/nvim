@@ -10,6 +10,9 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.winborder = "rounded"
+
+vim.opt.clipboard = ""
+
 vim.opt.cmdheight = 1
 
 vim.diagnostic.config({
@@ -24,6 +27,7 @@ vim.diagnostic.config({
 vim.opt.virtualedit:append({ "onemore" })
 
 vim.opt.scrolloff = 8
+
 vim.opt.textwidth = 140
 
 vim.cmd("set expandtab")
