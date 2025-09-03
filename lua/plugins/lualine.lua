@@ -1,12 +1,11 @@
 local lint_progress = function()
-  -- local linters = require("lint").get_running()
   local filetype = vim.bo.filetype
   local linters = require("lint").linters_by_ft[filetype]
 
   if #linters == 0 then
     return ""
   end
-  return "󰈾 " .. table.concat(linters, ", ")
+  return "󰨮 " .. table.concat(linters, ", ")
 end
 
 local conform_progress = function()
@@ -23,7 +22,7 @@ local conform_progress = function()
     table.insert(names, f.name)
   end
 
-  return "⁋ " .. table.concat(names, ", ")
+  return " " .. table.concat(names, ", ")
 end
 
 return {
@@ -36,7 +35,7 @@ return {
     sections = {
       lualine_a = { { "mode", separator = { left = "" }, right_padding = 0 } },
       lualine_y = {
-        "lsp_status",
+        { "lsp_status", icon = " " },
         lint_progress,
         conform_progress,
       },

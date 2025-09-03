@@ -1,7 +1,7 @@
 return {
-  -- { "echasnovski/mini.pick", version = false },
+  -- { "nvim-mini/mini.pick", version = false },
   {
-    "echasnovski/mini.surround",
+    "nvim-mini/mini.surround",
     opts = {
       mappings = {
         add = "<leader>msa", -- Add surrounding in Normal and Visual modes

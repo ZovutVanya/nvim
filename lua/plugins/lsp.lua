@@ -40,6 +40,9 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },
+    keys = {
+      { "gd", vim.lsp.buf.definition, desc = "Go to definition" },
+    },
     opts = {
       servers = {
 
