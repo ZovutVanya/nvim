@@ -2,53 +2,50 @@ return {
   "mfussenegger/nvim-lint",
   event = "LazyFile",
   opts = {
-    events = { "BufWritePost", "BufReadPost", "InsertLeave" },
+    events = { "BufWritePost", "BufReadPost", "InsertLeave", "BufEnter" },
     linters_by_ft = {
       sh = { "shellcheck" },
-      zsh = { "shellcheck" },
+      zsh = { "shellcheck", "zshn" },
       python = { "ruff" },
       -- python = { "mypy" },
       c = { "cpplint" },
       cpp = { "cpplint" },
       lua = { "selene" },
       sql = { "postgrestools" },
-      -- sql = { "sqlfluff" },
-      --
-      -- Use the "*" filetype to run linters on all filetypes.
-      -- ['*'] = { 'global linter' },
-      -- Use the "_" filetype to run linters on filetypes that don't have other linters configured.
-      -- ['_'] = { 'fallback linter' },
-      -- ["*"] = { "typos" },
+    },
+    linters = {
+      shellcheck = {
+        condition = function(ctx)
+          return not ctx.filename:match("%.env")
+        end,
+      },
+      zshn = {
+        name = "zshn",
+        cmd = "zsh",
+        stdin = false,
+        append_fname = true,
+        args = { "-n" }, -- syntax check only
+        stream = "stderr",
+        ignore_exitcode = true,
+        parser = require("lint.parser").from_errorformat(
+          "%f:%l: %m",
+          { source = "zsh -n", severity = vim.diagnostic.severity.ERROR }
+        ),
+      },
     },
   },
   config = function(_, opts)
     local lint = require("lint")
 
-    -- apply linters_by_ft config
-    lint.linters_by_ft = opts.linters_by_ft
+    -- Prepend --shell=bash to shellcheck args
+    table.insert(lint.linters.shellcheck.args, 1, "--shell=bash")
 
-    -- prevent shellcheck from running on .env files
-    lint.linters.shellcheck = vim.tbl_extend("force", lint.linters.shellcheck, {
-      condition = function(ctx)
-        return not ctx.filename:match("%.env")
+    lint.linters_by_ft = vim.tbl_extend("force", lint.linters_by_ft, opts.linters_by_ft)
+
+    vim.api.nvim_create_autocmd(opts.events, {
+      callback = function()
+        lint.try_lint()
       end,
     })
-
-    -- set up autocommands for lint events
-    -- vim.api.nvim_create_autocmd(opts.events, {
-    --   callback = function()
-    --     require("lint").try_lint()
-    --   end,
-    -- })
   end,
-  vim.api.nvim_create_user_command("LintInfo", function()
-    local filetype = vim.bo.filetype
-    local linters = require("lint").linters_by_ft[filetype]
-
-    if linters then
-      print("Linters for " .. filetype .. ": " .. table.concat(linters, ", "))
-    else
-      print("No linters configured for filetype: " .. filetype)
-    end
-  end, {}),
 }

@@ -3,6 +3,14 @@
 -- Add any additional options here
 -- colorscheme and transparency
 
+-- vim.g.spellfile_URL = "http://ftp.vim.org/pub/vim/"
+
+-- vim.filetype.add({
+--   extension = {
+--     zsh = "zsh",
+--   },
+-- })
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 

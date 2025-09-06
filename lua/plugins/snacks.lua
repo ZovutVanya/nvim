@@ -4,6 +4,13 @@ return {
     { "<leader>\\", ":lua Snacks.dashboard()<CR>" },
   },
   opts = {
+    picker = {
+      sources = {
+        explorer = {
+          layout = { layout = { position = "right" } },
+        },
+      },
+    },
     dashboard = {
       preset = {
         header = [[
