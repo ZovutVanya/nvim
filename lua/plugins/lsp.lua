@@ -28,7 +28,7 @@ return {
       },
       automatic_installation = true,
       handlers = {
-        rust_analyzer = function() end,
+        lsprust_analyzer = function() end,
       },
     },
     dependencies = {
