@@ -10,10 +10,6 @@ vim.api.nvim_create_user_command("Q", "quit", {})
 -- clear highlighting
 vim.keymap.set({ "n" }, "<C-l>", "<cmd>noh<CR>")
 
--- move highlighted text up and down with autoindenting
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
 -- append next line without moving the cursor
 vim.keymap.set("n", "J", "mzJ`z")
 
@@ -39,10 +35,13 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- LSP renaming
 vim.keymap.set("n", "<leader>rn", ":IncRename ")
 
--- copy line diagnostics
+-- copy line diagnostics to the systems clipboard
 vim.keymap.set(
   "n",
   "<leader>cy",
-  ':lua vim.diagnostic.open_float()<CR>:lua vim.diagnostic.open_float()<CR>ggVG"+y<CR>:q<CR>',
+  ":lua vim.diagnostic.open_float()<CR>:lua vim.diagnostic.open_float()<CR>:%y+<CR>:q<CR>",
   { desc = 'Copy Line Diagnostics to "+' }
 )
+
+-- copy filename to the systems clipboard
+vim.keymap.set("n", "<leader>fC", ":let @+ = expand('%:p')<CR>", { desc = 'Copy filepath to "+' })

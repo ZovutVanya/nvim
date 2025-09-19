@@ -1,43 +1,5 @@
 return {
   {
-    "mason-org/mason.nvim",
-    opts = {
-      ui = {
-        border = "rounded",
-        icons = {
-          package_installed = "Ѵ",
-          package_pending = "Ѱ",
-          package_uninstalled = "Ѫ",
-        },
-      },
-    },
-  },
-
-  {
-    "mason-org/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = {
-        "lua_ls",
-        "basedpyright",
-        -- "pylsp",
-        "clangd",
-        "powershell_es",
-        "bashls",
-        "tinymist",
-        "sqls",
-      },
-      automatic_installation = true,
-      handlers = {
-        lsprust_analyzer = function() end,
-      },
-    },
-    dependencies = {
-      { "mason-org/mason.nvim", opts = {} },
-      "neovim/nvim-lspconfig",
-    },
-  },
-
-  {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },
     keys = {
@@ -77,12 +39,12 @@ return {
 
         clangd = {},
 
-        powershell_es = {
-          bundle_path = "C:\\Users\\Ivan\\AppData\\Local\\nvim-data\\mason\\packages\\powershell-editor-services",
-          init_options = {
-            enableProfileLoading = false,
-          },
-        },
+        -- powershell_es = {
+        --   bundle_path = "C:\\Users\\Ivan\\AppData\\Local\\nvim-data\\mason\\packages\\powershell-editor-services",
+        --   init_options = {
+        --     enableProfileLoading = false,
+        --   },
+        -- },
 
         bashls = {
           filetypes = { "sh", "zsh", "bash" },
@@ -109,7 +71,6 @@ return {
           semanticTokens = "disable",
         },
 
-        -- sqls = {},
         postgres_lsp = {},
       },
     },

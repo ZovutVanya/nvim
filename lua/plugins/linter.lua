@@ -10,7 +10,7 @@ return {
       c = { "cpplint" },
       cpp = { "cpplint" },
       lua = { "selene" },
-      sql = { "postgrestools" },
+      -- sql = { "sqlfluff" },
     },
     linters = {
       shellcheck = {
@@ -18,6 +18,11 @@ return {
           return not ctx.filename:match("%.env")
         end,
       },
+      -- sqlfluff = {
+      --   condition = function(ctx)
+      --     return not ctx.filename:match("%.sql")
+      --   end,
+      -- },
     },
   },
   config = function(_, opts)
@@ -39,4 +44,14 @@ return {
       end,
     })
   end,
+  vim.api.nvim_create_user_command("LintInfo", function()
+    local filetype = vim.bo.filetype
+    local linters = require("lint").linters_by_ft[filetype]
+
+    if linters then
+      print("Linters for " .. filetype .. ": " .. table.concat(linters, ", "))
+    else
+      print("No linters configured for filetype: " .. filetype)
+    end
+  end, {}),
 }

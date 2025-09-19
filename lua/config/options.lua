@@ -34,7 +34,7 @@ vim.diagnostic.config({
 -- allows the block cursor to be placed one character after line's end
 vim.opt.virtualedit:append({ "onemore" })
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 4
 
 vim.opt.textwidth = 140
 
